@@ -1,0 +1,12 @@
+# Ne pas commiter les fichiers avec des tokens/secrets
+*.token
+*.secret
+.env
+
+# Fichiers de sauvegarde
+*.backup
+claude-backup.tar.gz
+
+# OS
+.DS_Store
+Thumbs.db

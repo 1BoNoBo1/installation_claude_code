@@ -1,0 +1,57 @@
+# CLAUDE.md
+
+Configuration globale pour Claude Code.
+
+## Utilisateur
+
+- **Nom**: __USERNAME__
+- **Email**: __EMAIL__
+
+## MCP Servers disponibles
+
+| Serveur | Usage |
+|---------|-------|
+| **filesystem** | Accès fichiers `$HOME` |
+| **memory** | Graphe de connaissances persistant |
+| **sequential-thinking** | Raisonnement structuré multi-étapes |
+| **fetch** | Récupération contenu web |
+| **puppeteer** | Automatisation navigateur (headless/programmatique) |
+| **sqlite** | Base locale `$HOME/databases/claude.db` |
+| **postgres** | Base `postgresql://$USER@localhost/claude` |
+| **github** | Intégration GitHub (issues, PRs, repos) |
+
+## Claude for Chrome (Navigateur isolé)
+
+L'utilisateur dispose de **Claude for Chrome** dans un environnement Chromium isolé.
+
+| Élément | Valeur |
+|---------|--------|
+| **Lanceur** | "Chromium Claude" (applications) |
+| **Profil** | `~/snap/chromium/common/chromium-claude/` |
+| **Commande** | `chromium-browser --user-data-dir=$HOME/snap/chromium/common/chromium-claude` |
+
+### Quand suggérer Claude for Chrome vs Puppeteer
+
+| Besoin | Outil recommandé |
+|--------|------------------|
+| Navigation interactive assistée par l'utilisateur | **Claude for Chrome** |
+| Tâches planifiées/récurrentes dans le navigateur | **Claude for Chrome** |
+| Scraping, tests automatisés, captures d'écran | **Puppeteer MCP** |
+| Automatisation sans intervention utilisateur | **Puppeteer MCP** |
+
+> Note: Claude for Chrome est isolé des navigateurs principaux (Chrome/Brave) pour éviter les risques d'injection de prompt sur les sessions authentifiées.
+
+## Méthodologie SPARC
+
+Approche structurée en 5 phases :
+1. **Specification** - Définir objectifs et requirements
+2. **Pseudocode** - Logique haut niveau
+3. **Architecture** - Conception système
+4. **Refinement** - Tests et optimisation
+5. **Completion** - Documentation et déploiement
+
+## Environnement
+
+- **OS**: Ubuntu (Linux)
+- **Python**: 3.x
+- **Node**: 24.x
