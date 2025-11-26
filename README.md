@@ -8,10 +8,12 @@ Script d'installation pour reproduire une configuration Claude Code complète av
 installation_claude_code/
 ├── install.sh                    # Script d'installation automatique
 ├── config/
-│   ├── mcp-servers.json          # Configuration des serveurs MCP
+│   ├── mcp-servers.json          # Référence des serveurs MCP (documentation)
 │   └── CLAUDE.md.template        # Template pour CLAUDE.md
 └── README.md
 ```
+
+> **Note** : Le fichier `config/mcp-servers.json` est une **référence documentaire** uniquement. Les variables `$HOME` et `$USER` ne sont pas interprétées dans un fichier JSON. L'installation réelle utilise le script `install.sh` qui appelle `claude mcp add` avec les bonnes substitutions.
 
 ## Serveurs MCP inclus
 
